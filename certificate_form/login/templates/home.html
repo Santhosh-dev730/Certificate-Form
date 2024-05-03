@@ -1,0 +1,149 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Form</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+  <div class="container mt-3">
+    <h2 class="text-center fw-bold">ROYALE TECHNOLOGIES</h2>
+    <h3 class="text-center">CERTIFICATE REQUEST FORM</h3>
+    <div class="card">
+      <div class="card-body">
+    <h3 class="text-center">Register</h3>
+    <form class="form-group row" method="POST">
+      {% csrf_token %}
+      <div class="form-group col-xs-2 mt-2">
+        <label class="control-label col-sm-2 fw-bold">Register No:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="id">
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label class="control-label col-sm-2 fw-bold">Full Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="name">
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label class="control-label col-sm-2 fw-bold">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" name="email">
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label class="control-label col-sm-2 fw-bold">Course:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" name="course">
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label class="control-label col-sm-2 fw-bold">Trainer Name:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" name="trainer">
+        </div>
+      </div>
+      <div class="form-group col-auto mt-2">
+        <label class="control-label fw-bold ">Mobile No:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" name="phone">
+        </div>
+      </div>
+      <div class="form-group mt-2">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="cancel" class="btn btn-primary">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="col-md-6">
+    <h3 class="page-header text-center text-primary">Certficate Applied List</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Register No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Trainer Name</th>
+                <th>Mobile No.</th>
+            </tr>
+        </thead>
+        {% for certificate_form in form_data %}
+        <tbody>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{certificate_form.reg_no}}</td>
+                <td>{{certificate_form.name}}</td>
+                <td>{{certificate_form.email}}</td>
+                <td>{{certificate_form.course}}</td>
+                <td>{{certificate_form.trainer}}</td>
+                <td>{{certificate_form.phone}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certficate Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<style>
+    .box{
+        width: 500px;
+        margin-left: 220px;
+    }
+    .buttons{
+        margin-left: 250px;
+    }
+</style>
+<body>
+    <div class="container is-fluid">
+        <form class="box" method="POST">
+          {% csrf_token %}
+            <p class="is-size-3 has-text-centered has-text-weight-bold">Certificate Form </p>
+            <div class="field mt-5 ml-5">
+                <label class="label has-text-weight-semibold">Register No.</label>
+                <input type="text" class="input" name="id" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Name</label>
+                <input type="text" class="input" name="name" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Email ID</label>
+                <input type="text" class="input" name="email" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Course</label>
+                <input type="text" class="input" name="course" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Trainee Name</label>
+                <input type="text" class="input" name="trainer" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Mobile No.</label>
+                <input type="text" class="input" name="phone" style="width: 400px;">
+            </div>
+            <div class="buttons">
+            <button class="button is-primary">Submit</button>
+            <button class="button is-danger">Cancel</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

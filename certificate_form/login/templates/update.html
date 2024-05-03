@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update - Certficate Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<style>
+    .box{
+        width: 500px;
+        margin-left: 220px;
+    }
+    .buttons{
+        margin-left: 185px;
+    }
+</style>
+<body>
+    <div class="container is-fluid">
+        <form class="box" action="/update/{{data.id}}" method="POST">
+          {% csrf_token %}
+            <p class="is-size-3 has-text-centered has-text-weight-bold">Update - Certificate Form </p>
+            <div class="field mt-5 ml-5">
+                <label class="label has-text-weight-semibold">Register No.</label>
+                <input type="text" class="input" name="id" value="{{data.reg_no}}" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Name</label>
+                <input type="text" class="input" name="name" value="{{data.name}}" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Email ID</label>
+                <input type="text" class="input" name="email" value="{{data.email}}" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Course</label>
+                <input type="text" class="input" name="course" value="{{data.course}}" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Trainee Name</label>
+                <input type="text" class="input" name="trainer" value="{{data.trainer}}" style="width: 400px;">
+            </div>
+            <div class="field ml-5">
+                <label class="label has-text-weight-semibold">Mobile No.</label>
+                <input type="text" class="input" name="phone" value="{{data.phone}}" style="width: 400px;">
+            </div>
+            <div class="buttons">
+            <button class="button is-primary">Update Changes</button>
+            <button class="button is-danger">Cancel</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
