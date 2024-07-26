@@ -9,7 +9,7 @@ Dependencies
 
 #. Django - 5.0.3
 
-# Django CRUD App With SQLite (Python 3)
+# Django Certificate Form App With SQLite (Python 3)
 Tutorial for building create, retrieve, update and delete CRUD application with Django and SQLite (default django database).
 
 ### Prerequisites
@@ -17,8 +17,21 @@ Tutorial for building create, retrieve, update and delete CRUD application with 
 Make sure you have installed Python 3 and virtual environment on your device.
 
 1. Install django and start new project inside your `django-crud-sqlite/` directory according the above structure
-2. ```
+```
 pip install django
 django-admin startproject login
 cd login
+```
+2. Create new app, from login/ directory will create create new my_app/ to store the collection
+```
+On Windows -> python manage.py startapp my_app
+```
+3. Every after change models.py you need to make migrations into db.sqlite3 (database) to create the table for the new model
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+4. Test the project
+```
+python manage.py runserver
 ```
