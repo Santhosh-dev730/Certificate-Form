@@ -16,9 +16,8 @@ Tutorial for building create, retrieve, update and delete CRUD application with 
 
 Make sure you have installed Python 3 and virtual environment on your device.
 
-1. Install django and start new project inside your `django-crud-sqlite/` directory according the above structure
+1. Install django and start new project inside your directory according the above structure
 ```
-pip install django
 django-admin startproject login
 cd login
 ```
