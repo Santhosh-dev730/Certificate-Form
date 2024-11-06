@@ -9,7 +9,7 @@ Dependencies
 
 #. Django - 5.0.3
 
-# Django Certificate Form App With SQLite (Python 3)
+# Django Certificate Form Application
 Tutorial for building create, retrieve, update and delete CRUD application with Django and SQLite (default django database).
 
 ### Prerequisites
